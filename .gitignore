@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Arduino build output
+build/
+*.elf
+*.bin
+*.hex
+
+# Secrets — real deployment keys must NEVER be committed (protocol-spec §11.1).
+# The demo PSK in the protocol library's YankiConfig.h is a public placeholder.
+secrets*.h
+*secrets*
+
+# The protocol library is a committed git submodule (gitlink), not build output.
+# Do not ignore firmware/lib/yanki-protocol/.
+!firmware/lib/yanki-protocol/
+
+# Editor / OS noise
+.vscode/
+.DS_Store
+Thumbs.db
