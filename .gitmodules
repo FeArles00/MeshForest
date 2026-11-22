@@ -1,0 +1,3 @@
+[submodule "firmware/lib/yanki-protocol"]
+	path = firmware/lib/yanki-protocol
+	url = ../yanki-protocol
