@@ -17,14 +17,16 @@ repository.
 This repository is the **application side** of the project: the ESP8266
 firmware sketches, board configuration, hardware notes, and project-level
 documentation. The custom protocol implementation and its reference model live
-in a separate `yanki-protocol` repository, consumed here as a git submodule at
+in a separate `yanki-protocol` repository — **YANKI** (*Yerel Ağlarda
+Noktalararası Katmanlı İletişim*, "Layered Inter-Node Communication in Local
+Networks") — consumed here as a git submodule at
 [firmware/lib/yanki-protocol](firmware/lib/yanki-protocol).
 
 | Part | Description |
 |---|---|
 | Field node | NodeMCU (ESP8266) + CC1101 433 MHz radio + DHT22 + flame sensor (+ MQ-2, not yet wired). Sends authenticated sensor reports and flame alerts, relays other nodes' traffic. |
 | Gateway | Same platform + SSD1306 OLED + siren. Dedups alerts, ACKs them end-to-end, fires the siren once per unique alert. |
-| Protocol library | Custom compact binary mesh protocol (60-byte packets): managed flooding, TTL + duplicate suppression, AES-CMAC authentication, replay windows, end-to-end gateway ACKs with bounded retries. Specified in [firmware/lib/yanki-protocol/docs/protocol-spec.md](firmware/lib/yanki-protocol/docs/protocol-spec.md). |
+| Protocol library | **YANKI** — custom compact binary mesh protocol (60-byte packets): managed flooding, TTL + duplicate suppression, AES-CMAC authentication, replay windows, end-to-end gateway ACKs with bounded retries. Specified in [firmware/lib/yanki-protocol/docs/protocol-spec.md](firmware/lib/yanki-protocol/docs/protocol-spec.md). |
 | Board library | [firmware/lib/MeshForestBoard](firmware/lib/MeshForestBoard) — app-local Arduino library with pins, radio parameters, and demo timing. |
 | Protocol tests | Python reference model and discrete-event flood simulator live with the protocol repository, not here. The C++ firmware cross-validates against its golden vectors at boot. |
 

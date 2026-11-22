@@ -5,8 +5,10 @@ This directory holds Arduino libraries used by the MeshForest demo sketches.
 ## `yanki-protocol/` — git submodule
 
 The protocol implementation, its specification, and its Python reference model
-live in a separate `yanki-protocol` repository. It is consumed here as a git
-submodule at `firmware/lib/yanki-protocol`.
+live in a separate `yanki-protocol` repository — **YANKI** (*Yerel Ağlarda
+Noktalararası Katmanlı İletişim*, "Layered Inter-Node Communication in Local
+Networks"). It is consumed here as a git submodule at
+`firmware/lib/yanki-protocol`.
 
 Initialise it after cloning:
 
