@@ -8,9 +8,9 @@ gateway with a display and siren.
 Two boards have exchanged authenticated packets over the air on a desk
 (2026-11-06, 18/18 clean). Range, field packet-error rate, multi-hop relay
 behavior, sensor calibration, and power autonomy are **not yet tested**. Do
-not deploy this where a life depends on it. See
-[docs/test-log.md](docs/test-log.md) for exactly what has and has not been
-verified.
+not deploy this where a life depends on it. The internal test log that records
+each run and its limits is kept privately and is not published with this
+repository.
 
 ## What it is
 
@@ -31,11 +31,11 @@ in a separate `yanki-protocol` repository, consumed here as a git submodule at
 ## Repository layout
 
 ```
-docs/                       project requirements, hardware notes, decisions, test log
+docs/                       project requirements and hardware notes
   forest_fire_mesh_node_project_spec.md   project requirements (source of truth)
   hardware.md               verified pin map + wiring status
-  decision-log.md           every accepted design decision (D1–D18) with rationale
-  test-log.md               every test run with results AND its limits
+  esp_pinout.md             board silkscreen reference
+  connections-node-pinout.md  early wiring draft, superseded by hardware.md
 firmware/
   lib/MeshForestBoard/      app-local board library (pins, radio, timing)
   lib/yanki-protocol/       protocol git submodule (spec, C++ codec, Python model)

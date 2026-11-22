@@ -7,6 +7,7 @@ This file is the current project context for AI coding assistants (for example, 
 
 Status: evolving working specification
 Last updated: 2026-11-22 (pre-publication contradiction audit: header byte order corrected to little-endian, implemented data rate documented as 4.8 kbps — see decisions D16/D17/D18)
+Decision identifiers (D1–D18) refer to the project's internal decision log, which is not published with this repository; the accepted outcomes are stated inline where they matter.
 Firmware target: Arduino C++ / Arduino Core for ESP8266
 Primary node MCU: NodeMCU V3, ESP8266 ESP-12E, 32-pin board
 Radio: CC1101 sub-GHz transceiver modules
@@ -55,14 +56,14 @@ Main controller:
 Radio:
 - CC1101 transceiver module(s), intended for node-to-node packet communication.
 - GDO2 was specifically discussed; final pin assignment and whether it is used are not yet confirmed.
-- Operating band CONFIRMED 2026-10-20: 433 MHz marking (Robotistan module; antenna included; 1.8-3.6 V supply). Library SELECTED 2026-10-20 and VALIDATED on the bench 2026-11-06: RadioLib 7.8.1 — see docs/decision-log.md D10/D12 and docs/hardware.md.
+- Operating band CONFIRMED 2026-10-20: 433 MHz marking (Robotistan module; antenna included; 1.8-3.6 V supply). Library SELECTED 2026-10-20 and VALIDATED on the bench 2026-11-06: RadioLib 7.8.1 — see docs/hardware.md.
 - Implemented radio settings (2026-11-06): 434.0 MHz, 4.8 kbps (RadioLib default, D17), 25 kHz deviation (D15), 0 dBm, sync word 0x12AD (demo only). Still to document: channel choice, e.r.p. incl. antenna gain, occupied-bandwidth mask, regulatory verification.
 
 Sensors:
 - MQ-2 gas/smoke sensor modules, listed quantity: 3.
 - DHT22 temperature/humidity sensors, listed quantity: 2.
 - Flame-sensor module(s) (IR-based flame detector with digital output), quantity and exact part not recorded. Confirmed part of the active sensor scope on 2026-10-20.
-- LDR (light-dependent resistor): RETIRED from the sensor scope on 2026-10-20 (see docs/decision-log.md, decision D1). Do not reintroduce it without an approved decision.
+- LDR (light-dependent resistor): RETIRED from the sensor scope on 2026-10-20 (decision D1). Do not reintroduce it without an approved decision.
 - MQ-2 modules appear to be the common small PCB type with analog and digital outputs / comparator trimmer; verify the exact board and pin labels before connecting it.
 
 Power / solar parts:
@@ -164,7 +165,7 @@ C. Flame-sensor module (IR-based flame detector)
 - Unresolved: exact module and its output circuitry/voltage, quantity available, GPIO assignment, sensitivity and range under field conditions, and how firmware distinguishes a real flame from sunlight or other IR sources.
 - Treat the digital output as a boolean indicator only; do not interpret it as a calibrated intensity. Apply debouncing and persistence in firmware before raising an ALERT.
 
-(An earlier plan to use an LDR on A0 as a light-level context sensor was retired on 2026-10-20; see docs/decision-log.md.)
+(An earlier plan to use an LDR on A0 as a light-level context sensor was retired on 2026-10-20; decision D1.)
 
 Sensor fusion / alarm policy:
 - Do not finalize a single hard-coded threshold from guesswork.
@@ -299,7 +300,7 @@ Good error-handling expectations:
 - Radio: CC1101.
 - IDE/editor context: VS Code is an intended development environment; GitHub Copilot may be used to inspect/edit project files.
 - Build environment (recorded 2026-10-24): arduino-cli 1.5.1; ESP8266 core 3.1.2; FQBN `esp8266:esp8266:nodemcuv2`.
-- Libraries (pinned 2026-10-24): RadioLib 7.8.1, DHT sensor library 1.4.7, Adafruit Unified Sensor 1.1.15, Adafruit GFX + SSD1306 (details in docs/test-log.md).
+- Libraries (pinned 2026-10-24): RadioLib 7.8.1, DHT sensor library 1.4.7, Adafruit Unified Sensor 1.1.15, Adafruit GFX + SSD1306.
 
 Recommended workflow:
 1. Inventory current project files and record the existing compile status.
@@ -375,7 +376,7 @@ Radio/protocol:
 [DECIDED 2026-10-20 — D10] Band = 433 MHz under general-purpose SRD rules (10 mW e.r.p., ≤%10 duty cycle); alarm-specific bands deliberately not used. Channel choice, e.r.p. verification incl. antenna gain, and the occupied-bandwidth mask check remain open.
 [DECIDED 2026-10-20 — see docs/protocol-spec.md] Packet representation and the packet-size budget (60-byte total packet, 48-byte payload ceiling).
 [DECIDED 2026-10-20 — see docs/protocol-spec.md] Node ID allocation, sequence/message IDs, hop limit, duplicate-cache size/expiry, retry limits, random backoff, ACK policy, and node listening schedule.
-[DECIDED 2026-10-20] “Hashed broadcasts” and “MULTICAST WHISPER” retired (docs/decision-log.md, D9).
+[DECIDED 2026-10-20] “Hashed broadcasts” and “MULTICAST WHISPER” retired (decision D9).
 [DECIDED 2026-10-20 — see docs/protocol-spec.md] Cryptographic authentication/replay protection is in scope for v1 (AES-CMAC MIC + windowed per-source counters).
 
 Detection / gateway:

@@ -172,7 +172,7 @@ the radio to the SPI-labelled pins.
 | MQ-2 VCC / GND | 5V / GND | — | 5 V heater rail; never power from 3V3 |
 | Siren (gateway) | D16 (planned) | 16 | wire pending (gateway build) |
 
-**Board identification — results (2026-10-24, full trail in docs/test-log.md):**
+**Board identification — results (2026-10-24):**
 1. `03_gpio_probe` confirmed by touch: D12=GPIO12, D13=GPIO13, D14=GPIO14,
    D4=GPIO4, D5=GPIO5, D2=GPIO2. Boot evidence makes D0=GPIO0, D15=GPIO15,
    D16=GPIO16 consistent (final touch confirmation pending, not blocking).
