@@ -35,7 +35,6 @@ docs/                       project requirements and hardware notes
   forest_fire_mesh_node_project_spec.md   project requirements (source of truth)
   hardware.md               verified pin map + wiring status
   esp_pinout.md             board silkscreen reference
-  connections-node-pinout.md  early wiring draft, superseded by hardware.md
 firmware/
   lib/MeshForestBoard/      app-local board library (pins, radio, timing)
   lib/yanki-protocol/       protocol git submodule (spec, C++ codec, Python model)

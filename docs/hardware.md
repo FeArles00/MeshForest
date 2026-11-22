@@ -52,12 +52,10 @@ calculation with the real antenna) before any outdoor transmission.
 - No standard NodeMCU prints D9–D16/CSO/VBUS. **The label→GPIO mapping is
   NOT the usual NodeMCU table** and is being verified empirically
   (probe sketch `firmware/bringup/03_gpio_probe`).
-- Working hypothesis (UNVERIFIED, to be proven): printed MOSI/SCLK/MISO are
-  the ESP8266 HSPI pins (GPIO13/GPIO14/GPIO12) and CSO may be GPIO15 —
-  the label→GPIO table will be filled from probe results, not assumptions.
-- Owner wiring notes also in docs/connections-node-pinout.md (written by a
-  previous agent; its "usual NodeMCU mapping" table does NOT apply to this
-  board without verification, as its own caveats acknowledge).
+- The printed MOSI/SCLK/MISO/CSO labels are **not** the HSPI nets on this
+  clone: the radio only initialised after the wires were moved to
+  D14/D13/D12/D15 (measured 2026-11-06). The label→GPIO table is filled from
+  probe results, not assumptions.
 - ESP8266 facts (VERIFIED, platform-level): 3.3 V logic, **not 5 V tolerant**;
   bootstrap pins (GPIO0/GPIO2/GPIO15) constrain wiring; ~40–50 KB free heap.
 
