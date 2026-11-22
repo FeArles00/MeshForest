@@ -36,13 +36,11 @@ docs/                       project requirements, hardware notes, decisions, tes
   hardware.md               verified pin map + wiring status
   decision-log.md           every accepted design decision (D1–D18) with rationale
   test-log.md               every test run with results AND its limits
-  protocol-spec.md          retained for now; authoritative copy moves to the submodule
 firmware/
   lib/MeshForestBoard/      app-local board library (pins, radio, timing)
   lib/yanki-protocol/       protocol git submodule (spec, C++ codec, Python model)
   demo_node/ demo_gateway/  the working bench demo (Arduino sketches)
   bringup/                  staged bring-up sketches (blink → SPI probe → ping)
-tools/proto/                retained for now; protocol tests move to the submodule
 ```
 
 ## Hardware (bench-verified parts)

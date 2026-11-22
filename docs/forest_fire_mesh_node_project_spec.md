@@ -208,7 +208,7 @@ Radio module: CC1101. A suitable Arduino library and exact radio configuration m
 
 Still to decide and record:
 - Exact frequency band/channel and local regulatory compliance (band 433 MHz confirmed, D10; channel choice, e.r.p. incl. antenna gain, and the occupied-bandwidth mask still open).
-- Modulation, data rate, frequency deviation, receiver bandwidth, sync word, whitening/CRC settings, transmit power, preamble, and antenna (implemented 2026-11-06: 434.0 MHz, 4.8 kbps, 25 kHz deviation, 135 kHz RX BW, 0 dBm, sync 0x12AD demo-only — docs/protocol-spec.md §14 and firmware/shared/config.h; 38.4 kBaud deferred to v1.1 per D17).
+- Modulation, data rate, frequency deviation, receiver bandwidth, sync word, whitening/CRC settings, transmit power, preamble, and antenna (implemented 2026-11-06: 434.0 MHz, 4.8 kbps, 25 kHz deviation, 135 kHz RX BW, 0 dBm, sync 0x12AD demo-only — firmware/lib/yanki-protocol/docs/protocol-spec.md §14 and firmware/lib/MeshForestBoard/src/MeshForestBoard.h; 38.4 kBaud deferred to v1.1 per D17).
 - Library name/version and its framing behavior.
 - Gateway identity hardware (board/display/siren) and any pairing/enrollment method.
 

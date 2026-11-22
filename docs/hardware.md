@@ -125,7 +125,7 @@ window** — no new purchase strictly required.
   pin model, variable-length packets (interrupt-driven < 64 bytes — our ≤60 B
   packets stay in this regime), configurable sync word, CC1101 CRC16,
   appended RSSI/LQI status, `getRSSI()/getLQI()`.
-- RadioLib settings actually applied (all in `firmware/shared/config.h`):
+- RadioLib settings actually applied (all in `firmware/lib/MeshForestBoard/src/MeshForestBoard.h`):
   carrier 434.0 MHz, output power 0 dBm, **deviation 25 kHz** (D15 — the
   5 kHz default was measured too narrow for this module pair), sync word
   `0x12AD` **for the demo only** (a deployment MUST set its own, §3.3).
