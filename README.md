@@ -1,3 +1,5 @@
+**English** · [Türkçe](README.tr.md)
+
 # MeshForest — forest-fire early-warning mesh (application repo)
 
 Low-cost, solar/battery-powered wireless sensor nodes that watch for early
