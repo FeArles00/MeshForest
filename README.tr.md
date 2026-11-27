@@ -20,7 +20,8 @@ yayımlanmaz.
 
 Bu depo projenin **uygulama tarafıdır**: ESP8266 firmware sketch'leri, kart
 yapılandırması, donanım notları ve proje düzeyinde belgeler. Özel protokol
-uygulaması ve referans modeli ayrı bir `yanki-protocol` deposunda yaşar:
+uygulaması ve referans modeli ayrı bir
+[yanki-protocol](https://github.com/erdem-unal0/yanki-protocol) deposunda yaşar:
 **YANKI** (*Yerel Ağlarda Noktalararası Katmanlı İletişim*, "Layered Inter-Node
 Communication in Local Networks"). Bu depoda
 [firmware/lib/yanki-protocol](firmware/lib/yanki-protocol) adresinde bir git alt

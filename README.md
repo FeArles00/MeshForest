@@ -19,7 +19,8 @@ repository.
 This repository is the **application side** of the project: the ESP8266
 firmware sketches, board configuration, hardware notes, and project-level
 documentation. The custom protocol implementation and its reference model live
-in a separate `yanki-protocol` repository — **YANKI** (*Yerel Ağlarda
+in a separate [yanki-protocol](https://github.com/erdem-unal0/yanki-protocol)
+repository — **YANKI** (*Yerel Ağlarda
 Noktalararası Katmanlı İletişim*, "Layered Inter-Node Communication in Local
 Networks") — consumed here as a git submodule at
 [firmware/lib/yanki-protocol](firmware/lib/yanki-protocol).
